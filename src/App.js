@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+                                         
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { PrimaryProvider } from './Components/PrimaryContext';
+import Home from './Components/Home';
+import ProductListing from './Components/ProductListing';
+import ProductDetails from './Components/ProductDetails';
+import NavBar from './Components/NavBar';
+import Cart from './Components/Cart';
+import Footer from './Components/Footer';
+import ProductCategories from './Components/ProductCategories';
+const App = () => {                                                                              
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+return (                                  
+  <PrimaryProvider>
+  <Router>
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/products" element={<ProductListing />} />
+      <Route path="/products/:id" element={<ProductDetails />} /> {/* Include the :id parameter */}
+      {/* <Route path="/categories" element={<ProductCategories />} /> */}
+      <Route path="/cart" element={<Cart />} /> {/* Use the 'element' prop for rendering components */}
+                                                               
+    </Routes>
+    <ProductCategories />
+    <Footer />
+  </Router>
+</PrimaryProvider>
+);
+};
 
 export default App;
+
