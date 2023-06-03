@@ -22,4 +22,16 @@
     color: inherit;
   }
   
+  .product-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .product-buttons button {
+    padding: 10px;
+    font-size: 16px;
+    width: auto;
+    height: auto;
+  }
   

@@ -8,7 +8,7 @@ import ProductDetails from './Components/ProductDetails';
 import NavBar from './Components/NavBar';
 import Cart from './Components/Cart';
 import Footer from './Components/Footer';
-import ProductCategories from './Components/ProductCategories';
+
 const App = () => {                                                                              
 
 return (                                  
@@ -23,7 +23,6 @@ return (
       <Route path="/cart" element={<Cart />} /> {/* Use the 'element' prop for rendering components */}
                                                                
     </Routes>
-    <ProductCategories />
     <Footer />
   </Router>
 </PrimaryProvider>

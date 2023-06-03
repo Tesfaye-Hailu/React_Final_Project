@@ -9,11 +9,13 @@ const Cart = () => {
   const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
 
   const handleFinalizePayment = () => {
+
     
     alert("Thank you for shopping with us!");
+    
     clearCart(); // Clear the cart
   };
-
+  
   return (
     <div className="cart-container">
       <h1>Cart</h1>

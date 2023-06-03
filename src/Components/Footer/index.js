@@ -1,7 +1,18 @@
 import React from 'react';
 import './index.css';
+import { useLocation } from 'react-router-dom';
+
+
 
 const Footer = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  if (!isHomePage) {
+    return null; // Hide the footer on other pages
+  }
+
+
   return (
     <footer className="footer">
       <div className="contact-info">
